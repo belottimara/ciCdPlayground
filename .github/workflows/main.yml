@@ -18,8 +18,8 @@ jobs:
             yarn build
             yarn test:e2e
       - name: Publish Test Report
-        uses: EnricoMi/publish-unit-test-result-action@v1
+        uses: mikepenz/action-junit-report@v4
         if: always() # always run even if the previous step fails
         with:
-          files: 'reports/*.xml'
+          report_paths: 'reports/*.xml'
       
